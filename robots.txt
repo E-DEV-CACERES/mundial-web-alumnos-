@@ -1,0 +1,6 @@
+# Robots — Mundial 2026 (GitHub Pages)
+# https://e-dev-caceres.github.io/mundial-web-alumnos-/
+User-agent: *
+Allow: /
+
+Sitemap: https://e-dev-caceres.github.io/mundial-web-alumnos-/sitemap.xml
