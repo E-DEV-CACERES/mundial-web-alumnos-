@@ -367,21 +367,21 @@
     </section>
 
     <!-- Aficionados -->
-    <section id="aficionados" class="seccion seccion-alt reveal">
+    <section id="aficionados" class="seccion seccion-aficion reveal">
       <div class="contenedor">
-        <div class="seccion-header">
+        <div class="seccion-header seccion-header-aficion">
           <span class="etiqueta">La grada</span>
           <h2>Aficionados y cultura popular</h2>
-          <p class="seccion-desc">El Mundial no es solo fútbol: es pasión, identidad y momentos que trascienden el campo.</p>
+          <p class="seccion-desc">Celebraciones históricas, tradiciones de hinchadas y el impacto social del torneo más grande del planeta — rumbo al Mundial 2026 en Norteamérica.</p>
         </div>
-        <div class="tabs" role="tablist" id="tabs-aficion">
-          <button class="tab activo" role="tab" data-tab="celebraciones">Celebraciones</button>
-          <button class="tab" role="tab" data-tab="tradiciones">Tradiciones</button>
-          <button class="tab" role="tab" data-tab="impacto">Impacto social</button>
+        <div class="tabs tabs-aficion" role="tablist" id="tabs-aficion" aria-label="Temas de afición">
+          <button class="tab activo" role="tab" id="tab-celebraciones" aria-selected="true" aria-controls="panel-celebraciones" data-tab="celebraciones">Celebraciones</button>
+          <button class="tab" role="tab" id="tab-tradiciones" aria-selected="false" aria-controls="panel-tradiciones" data-tab="tradiciones">Tradiciones</button>
+          <button class="tab" role="tab" id="tab-impacto" aria-selected="false" aria-controls="panel-impacto" data-tab="impacto">Impacto social</button>
         </div>
-        <div class="tab-panel activo" id="panel-celebraciones"></div>
-        <div class="tab-panel" id="panel-tradiciones"></div>
-        <div class="tab-panel" id="panel-impacto"></div>
+        <div class="tab-panel activo" id="panel-celebraciones" role="tabpanel" aria-labelledby="tab-celebraciones"></div>
+        <div class="tab-panel" id="panel-tradiciones" role="tabpanel" aria-labelledby="tab-tradiciones" hidden></div>
+        <div class="tab-panel" id="panel-impacto" role="tabpanel" aria-labelledby="tab-impacto" hidden></div>
       </div>
     </section>
 

@@ -361,28 +361,32 @@ function renderFanPanel(id, items, conAnio) {
 
   panel.innerHTML = items.map(function (item, index) {
     var videoId = "fan-video-" + id + "-" + index;
-    return '<article class="fan-card">' +
+    var imgHtml = imgTag(item.imagen, item.titulo).replace("<img ", '<img class="fan-card-img" ');
+    return (
+      '<article class="fan-card fan-card--' + ((index % 3) + 1) + '">' +
+      '<div class="fan-card-tricolor" aria-hidden="true"></div>' +
       '<div class="fan-card-media">' +
-        '<img src="' + item.imagen + '" alt="' + item.titulo + '" class="fan-card-img" loading="lazy">' +
-        '<div class="fan-card-overlay">' +
-          '<span class="fan-card-emoji">' + item.emoji + '</span>' +
-          (conAnio ? '<span class="fan-card-anio">' + item.anio + '</span>' : "") +
-        '</div>' +
-      '</div>' +
+      imgHtml +
+      '<div class="fan-card-overlay">' +
+      '<span class="fan-card-emoji">' + item.emoji + "</span>" +
+      (conAnio ? '<span class="fan-card-anio">' + item.anio + "</span>" : "") +
+      "</div>" +
+      "</div>" +
       '<div class="fan-card-body">' +
-        "<h4>" + item.titulo + "</h4>" +
-        "<p>" + item.texto + "</p>" +
-        '<button type="button" class="fan-card-btn-video" data-video="' + item.video + '" data-target="' + videoId + '" aria-expanded="false">' +
-          '▶ Ver video' +
-        '</button>' +
-      '</div>' +
+      "<h4>" + item.titulo + "</h4>" +
+      "<p>" + item.texto + "</p>" +
+      '<button type="button" class="fan-card-btn-video" data-target="' + videoId + '" aria-expanded="false">' +
+      "▶ Ver video" +
+      "</button>" +
       '<div class="fan-card-video oculto" id="' + videoId + '">' +
-        '<div class="video-responsive">' +
-          '<iframe title="' + item.videoLabel + '" data-src="https://www.youtube-nocookie.com/embed/' + item.video + '?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>' +
-        '</div>' +
-        '<p class="fan-video-caption">' + item.videoLabel + '</p>' +
-      '</div>' +
-    '</article>';
+      '<div class="video-responsive">' +
+      '<iframe title="' + item.videoLabel + '" data-src="https://www.youtube-nocookie.com/embed/' + item.video + '?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>' +
+      "</div>" +
+      '<p class="fan-video-caption">' + item.videoLabel + "</p>" +
+      "</div>" +
+      "</div>" +
+      "</article>"
+    );
   }).join("");
 }
 
@@ -451,15 +455,21 @@ function initTabs() {
 
     var nombre = tab.dataset.tab;
     tabs.querySelectorAll(".tab").forEach(function (t) {
-      t.classList.toggle("activo", t === tab);
+      var activo = t === tab;
+      t.classList.toggle("activo", activo);
+      t.setAttribute("aria-selected", activo ? "true" : "false");
     });
 
     document.querySelectorAll(".tab-panel").forEach(function (p) {
       p.classList.remove("activo");
+      p.hidden = true;
     });
 
     var panel = document.getElementById("panel-" + nombre);
-    if (panel) panel.classList.add("activo");
+    if (panel) {
+      panel.classList.add("activo");
+      panel.hidden = false;
+    }
   });
 }
 

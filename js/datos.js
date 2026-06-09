@@ -157,7 +157,7 @@ const AFICIONADOS = {
       titulo: "La locura argentina en Qatar",
       texto: "Millones salieron a las calles de Buenos Aires tras la final. La afición viajó masivamente a Doha cantando «Muchachos».",
       emoji: "🇦🇷",
-      imagen: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=700&q=80",
+      imagen: "img/mundial-2026/partidos.jpg",
       video: "bBmVVQnocjc",
       videoLabel: "Celebración en el Obelisco de Buenos Aires"
     },
@@ -166,7 +166,7 @@ const AFICIONADOS = {
       titulo: "Francia en los Campos Elíseos",
       texto: "Más de un millón de personas celebraron el triunfo francés en París, con cánticos de «Allez les Bleus».",
       emoji: "🇫🇷",
-      imagen: "https://images.unsplash.com/photo-1502602898657-3b917719cb13?w=700&q=80",
+      imagen: "img/mundial-2026/usa.jpg",
       video: "cwQ1COkPyT4",
       videoLabel: "Desfile de los Bleus por París"
     },
@@ -175,7 +175,7 @@ const AFICIONADOS = {
       titulo: "La fiesta alemana en Berlín",
       texto: "Tras ganar en Brasil, cientos de miles se reunieron en la Puerta de Brandeburgo.",
       emoji: "🇩🇪",
-      imagen: "https://images.unsplash.com/photo-1569910495989-0f4837910b67?w=700&q=80",
+      imagen: "img/mundial-2026/losangeles.jpg",
       video: "iDvZtHYTMPA",
       videoLabel: "Final 2014 en la Fanmeile de Berlín"
     },
@@ -184,7 +184,7 @@ const AFICIONADOS = {
       titulo: "España en Cibeles",
       texto: "Madrid se tiñó de rojo y amarillo. La afición no dormía tras décadas de espera.",
       emoji: "🇪🇸",
-      imagen: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=700&q=80",
+      imagen: "img/mundial-2026/cdmx.jpg",
       video: "5Y11N-j_UM0",
       videoLabel: "La Roja celebra el título en Madrid"
     },
@@ -193,7 +193,7 @@ const AFICIONADOS = {
       titulo: "El Sommermärchen",
       texto: "Alemania como anfitriona vivió un mes de fiesta multicolor en las Fan Zones, aunque no ganó.",
       emoji: "🇩🇪",
-      imagen: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700&q=80",
+      imagen: "img/mundial-2026/guadalajara.jpg",
       video: "Y1sxdLKBJco",
       videoLabel: "Ambiente en la Fan Mile de Berlín 2006"
     },
@@ -202,7 +202,7 @@ const AFICIONADOS = {
       titulo: "Francia unida bajo los arcos",
       texto: "Zidane unió a una Francia diversa. Celebraciones multiculturales en toda la nación.",
       emoji: "🇫🇷",
-      imagen: "https://images.unsplash.com/photo-1499856871958-5b962479f820?w=700&q=80",
+      imagen: "img/mundial-2026/miami.jpg",
       video: "2IdPL_q1-Nw",
       videoLabel: "Francia campeona del mundo 1998"
     }
@@ -212,7 +212,7 @@ const AFICIONADOS = {
       titulo: "Cielito Lindo — México",
       texto: "Los aficionados mexicanos cantan «Cielito Lindo» en cada partido de El Tri, creando una de las atmósferas más reconocibles del Mundial.",
       emoji: "🎵",
-      imagen: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700&q=80",
+      imagen: "img/mundial-2026/mexico.jpg",
       video: "3K4f1IXOcAg",
       videoLabel: "Afición mexicana cantando en el Mundial"
     },
@@ -220,7 +220,7 @@ const AFICIONADOS = {
       titulo: "Afición japonesa ejemplar",
       texto: "Tras cada partido, los japoneses recogen basura del estadio aunque hayan perdido. Un gesto admirado mundialmente desde 2014.",
       emoji: "🧹",
-      imagen: "https://images.unsplash.com/photo-1431324155629-1a6deb1ffd8f?w=700&q=80",
+      imagen: "img/mundial-2026/toronto.jpg",
       video: "41fV0uN5yq8",
       videoLabel: "Hinchas de Japón limpian el estadio en Qatar"
     },
@@ -228,7 +228,7 @@ const AFICIONADOS = {
       titulo: "Vuvuzelas en Sudáfrica 2010",
       texto: "El sonido de las vuvuzelas marcó el primer Mundial africano. Amadas y odiadas, definieron la banda sonora del torneo.",
       emoji: "📯",
-      imagen: "https://images.unsplash.com/photo-1459860666175-5cabcaa412b7?w=700&q=80",
+      imagen: "img/mundial-2026/vancouver.jpg",
       video: "1XcIsl_mOSY",
       videoLabel: "El sonido icónico de las vuvuzelas"
     },
@@ -236,7 +236,7 @@ const AFICIONADOS = {
       titulo: "Barras bravas y hinchadas",
       texto: "Desde las bandas argentinas hasta las ultras europeas, la afición organizada transforma estadios en espectáculos visuales.",
       emoji: "🎭",
-      imagen: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700&q=80",
+      imagen: "img/mundial-2026/equipos.jpg",
       video: "Z5Z-l8JEVsI",
       videoLabel: "Hinchadas y coreografías en el Mundial"
     },
@@ -244,41 +244,49 @@ const AFICIONADOS = {
       titulo: "Fan Fests y pantallas gigantes",
       texto: "Desde 2006, las Fan Zones permiten a millones ver partidos gratis en plazas públicas, democratizando la experiencia.",
       emoji: "📺",
-      imagen: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=700&q=80",
+      imagen: "img/mundial-2026/metlife-final.jpg",
       video: "F0Gsec_Ccjw",
       videoLabel: "FIFA Fan Festival — la fiesta fuera del estadio"
+    },
+    {
+      titulo: "Afición tricolor en 2026",
+      texto: "Estados Unidos, México y Canadá preparan Fan Fest en ciudades clave: LA, CDMX, Toronto y Nueva York unirán culturas latinas, anglosajonas y franco-canadienses.",
+      emoji: "🌎",
+      imagen: "img/mundial-2026/paises.jpg",
+      video: "Ql1_D4VJjd4",
+      videoLabel: "Ambiente de afición en un Mundial de Norteamérica"
     }
   ],
   impacto: [
     {
       titulo: "Identidad nacional",
-      texto: "El Mundial convierte a 32 (ahora 48) naciones en protagonistas. Para países pequeños como Croacia 2018 o Senegal, llegar lejos es un orgullo nacional.",
+      texto: "El Mundial convierte a 48 naciones en protagonistas. Para países como Croacia 2018 o Senegal, llegar lejos es un orgullo colectivo.",
       emoji: "🌍",
-      imagen: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700&q=80",
+      imagen: "img/mundial-2026/canada.jpg",
       video: "jJ7rF2n0j0E",
       videoLabel: "Croacia recibe a sus héroes del Mundial 2018"
     },
     {
       titulo: "Economía y turismo",
-      texto: "Qatar 2022 recibió más de 1,5 millones de visitantes. Sudáfrica 2010 generó infraestructura duradera. Brasil 2014 dejó estadios en debate.",
+      texto: "Qatar 2022 recibió más de 1,5 millones de visitantes. En 2026, tres países compartirán el impacto turístico de 16 sedes repartidas por un continente.",
       emoji: "💰",
-      imagen: "https://images.unsplash.com/photo-1577223625816-7546f13df404?w=700&q=80",
+      imagen: "img/mundial-2026/logistica.jpg",
       video: "EuvV2MtoaY0",
       videoLabel: "Qatar 2022 — el turismo en el Mundial"
     },
     {
       titulo: "Inclusión y visibilidad",
-      texto: "El fútbol femenino crece tras cada Mundial masculino. Qatar 2022 abrió debates sobre derechos laborales y diversidad.",
+      texto: "El fútbol femenino crece tras cada Mundial masculino. Los debates sobre diversidad y derechos marcan también la conversación en torno al torneo.",
       emoji: "✊",
-      imagen: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=700&q=80",
+      imagen: "img/mundial-2026/banner.jpg",
       video: "9Ggy2E11Niw",
       videoLabel: "España celebra su primer Mundial femenino"
     },
     {
       titulo: "Conexión global",
-      texto: "Más de 3.500 millones de personas siguieron Qatar 2022. Es el evento deportivo más visto del planeta.",
+      texto: "Más de 3.500 millones de personas siguieron Qatar 2022. Es el evento deportivo más visto del planeta — y 2026 promete superar esa cifra.",
       emoji: "📡",
-      imagen: "https://images.unsplash.com/photo-1459860666175-5cabcaa412b7?w=700&q=80",
+      imagen: "img/mundial-2026/nyc.jpg",
       video: "Ql1_D4VJjd4",
       videoLabel: "Afición de todo el mundo en Qatar 2022"
     }

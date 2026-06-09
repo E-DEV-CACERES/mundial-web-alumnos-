@@ -1394,11 +1394,63 @@ main,
 }
 
 /* --- Tabs aficionados --- */
+.seccion-aficion {
+  position: relative;
+  background: var(--bg-alt);
+}
+
+.seccion-aficion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(0, 104, 71, 0.06), transparent),
+    radial-gradient(ellipse 45% 35% at 90% 15%, rgba(0, 48, 135, 0.06), transparent);
+  pointer-events: none;
+}
+
+.seccion-header-aficion,
+.tabs-aficion,
+.tab-panel {
+  position: relative;
+  z-index: 1;
+}
+
 .tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   flex-wrap: wrap;
+  padding: 0.35rem;
+  border-radius: 100px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.tabs-aficion .tab {
+  padding: 0.55rem 1.35rem;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.tabs-aficion .tab.activo {
+  background: var(--wc26-gradient);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 48, 135, 0.2);
+}
+
+.tabs-aficion .tab:hover:not(.activo) {
+  color: var(--wc26-mx);
+  background: rgba(0, 104, 71, 0.08);
 }
 
 .tab {
@@ -1439,34 +1491,57 @@ main,
 
 .tab-panel {
   display: none;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--grid-gap);
 }
 
 .tab-panel.activo {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.25rem;
 }
 
 .fan-card {
+  --fan-card-accent: var(--wc26-mx);
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 14px;
   overflow: hidden;
-  transition: border-color var(--transition), transform 0.2s, box-shadow var(--transition);
+  transition: border-color var(--transition), transform 0.22s ease, box-shadow var(--transition);
   display: flex;
   flex-direction: column;
 }
 
+.fan-card--1 {
+  --fan-card-accent: var(--wc26-mx);
+  border-left: 4px solid var(--wc26-mx);
+}
+
+.fan-card--2 {
+  --fan-card-accent: var(--wc26-us);
+  border-top: 4px solid var(--wc26-us);
+}
+
+.fan-card--3 {
+  --fan-card-accent: var(--wc26-ca);
+  border-right: 4px solid var(--wc26-ca);
+}
+
+.fan-card-tricolor {
+  height: 3px;
+  background: var(--wc26-gradient-h);
+}
+
 .fan-card:hover {
-  border-color: var(--fan-accent);
+  border-color: var(--fan-card-accent);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 104, 71, 0.12);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--fan-card-accent) 15%, transparent);
 }
 
 .fan-card-media {
   position: relative;
-  height: 180px;
+  height: 200px;
   overflow: hidden;
+  background: var(--bg-alt);
 }
 
 .fan-card-img {
@@ -1477,31 +1552,32 @@ main,
 }
 
 .fan-card:hover .fan-card-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .fan-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
 }
 
 .fan-card-emoji {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
 
 .fan-card-anio {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   color: #fff;
-  background: rgba(0, 104, 71, 0.85);
-  padding: 0.25rem 0.65rem;
-  border-radius: 100px;
+  background: var(--fan-card-accent);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
 }
 
 .fan-card-body {
@@ -1513,15 +1589,16 @@ main,
 
 .fan-card h4 {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   line-height: 1.35;
+  color: var(--text);
 }
 
 .fan-card p {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.6;
   flex: 1;
   margin-bottom: 1rem;
 }
@@ -1531,27 +1608,34 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 100px;
-  background: var(--wc26-gradient);
-  color: #fff;
+  padding: 0.48rem 1rem;
+  border: 2px solid var(--fan-card-accent);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--fan-card-accent);
   font-family: var(--font);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.2s;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
 }
 
 .fan-card-btn-video:hover {
+  background: var(--fan-card-accent);
+  color: #fff;
   transform: scale(1.03);
-  box-shadow: 0 4px 16px rgba(0, 48, 135, 0.25);
 }
 
 .fan-card-video {
-  border-top: 1px solid var(--border);
-  padding: 0 0 1rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
   animation: fadeIn 0.35s ease;
+}
+
+.fan-card-video .video-responsive {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 
 .video-responsive {
@@ -3071,7 +3155,6 @@ main,
   .grid-2026,
   .cards-2026,
   .sedes-grid,
-  .tab-panel.activo,
   .hero-stats,
   .ranking-copas {
     grid-template-columns: repeat(2, 1fr);
@@ -3169,7 +3252,6 @@ main,
   .grid-2026,
   .cards-2026,
   .sedes-grid,
-  .tab-panel.activo,
   .hero-stats,
   .ranking-copas,
   .acordeon,
@@ -3190,8 +3272,16 @@ main,
     height: 64px;
   }
 
-  .banner-2026-stats {
-    grid-template-columns: 1fr 1fr;
+  .tabs-aficion {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+
+  .tabs-aficion .tab {
+    flex: 1;
+    text-align: center;
+    padding-inline: 0.75rem;
+    font-size: 0.78rem;
   }
 
   .comp-datos {
