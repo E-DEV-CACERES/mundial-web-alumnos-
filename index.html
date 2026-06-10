@@ -171,6 +171,8 @@
   </header>
 
   <main>
+    <aside class="aviso-global" id="aviso-datos-global" aria-live="polite"></aside>
+
     <!-- Mundial 2026 -->
     <section id="mundial-2026" class="seccion seccion-2026 reveal">
       <div class="contenedor">
@@ -194,8 +196,9 @@
         <div class="seccion-header seccion-header-partidos">
           <span class="etiqueta">Calendario · Fase de grupos</span>
           <h2>Partidos, sedes y transmisión</h2>
-          <p class="seccion-desc">Consulta resultados del grupo, sede de cada encuentro, canales de TV/streaming y vídeo de referencia. Elige grupo y selección para ver sus partidos.</p>
+          <p class="seccion-desc">Consulta resultados del grupo, sede de cada encuentro, canales de TV/streaming y vídeo de referencia. Los resultados se revisan automáticamente desde el repositorio.</p>
         </div>
+        <div class="partidos-sync-bar partidos-sync--cargando" id="partidos-sync-bar" aria-live="polite"></div>
         <div class="partidos-toolbar">
           <label class="logistica-campo">
             <span>Grupo</span>
@@ -222,7 +225,7 @@
             <ul class="partidos-grid" id="partidos-lista"></ul>
           </div>
         </div>
-        <p class="partidos-nota">* Grupos ilustrativos. Canales orientativos; el sorteo oficial puede cambiar rivales, sedes y horarios.</p>
+        <p class="partidos-nota">* Grupos ilustrativos. Canales orientativos. Para cambiar resultados sin editar código, modifica <code>data/partidos-live.json</code> y publica en GitHub.</p>
       </div>
     </section>
 
@@ -437,13 +440,14 @@
         <a href="#pronostico">Pronóstico</a>
       </nav>
       <p class="col-4">Mundial de Fútbol — Proyecto educativo HTML · CSS · JavaScript</p>
-      <p class="pie-sub col-4">Datos históricos hasta Qatar 2022 · Próxima edición: junio 2026 · <a href="https://www.fifa.com" rel="noopener noreferrer">FIFA.com</a></p>
+      <p class="pie-sub col-4">Datos históricos fijos · Partidos: revisión automática cada 5 min · <a href="https://www.fifa.com" rel="noopener noreferrer">FIFA.com</a></p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/globe.gl/dist/globe.gl.min.js"></script>
   <script src="js/datos.js"></script>
   <script src="js/partidos-calendario.js"></script>
+  <script src="js/actualizacion-datos.js"></script>
   <script src="js/partidos.js"></script>
   <script src="js/logistica-globo.js"></script>
   <script src="js/script.js"></script>

@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "actualizado": "2026-06-09T20:00:00",
+    "fuente": "data/partidos-live.json (repositorio)",
+    "nota": "Proyecto educativo. Edita este archivo y sube cambios a GitHub para actualizar la web sin tocar el código."
+  },
+  "partidos": {}
+}

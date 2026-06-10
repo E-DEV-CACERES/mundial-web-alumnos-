@@ -4,6 +4,7 @@
 (function () {
   var grupoActivo = "A";
   var equipoActivoId = "mexico";
+  var selectoresListos = false;
 
   function getSede(id) {
     return SEDES_LOGISTICA.find(function (s) {
@@ -249,12 +250,20 @@
     });
   }
 
-  function initPartidos() {
-    if (!document.getElementById("partidos")) return;
-    poblarSelectores();
+  function refreshPartidosUI() {
     renderGrupoResultados(grupoActivo);
     renderPartidosEquipo(equipoActivoId);
   }
 
+  function initPartidos() {
+    if (!document.getElementById("partidos")) return;
+    if (!selectoresListos) {
+      poblarSelectores();
+      selectoresListos = true;
+    }
+    refreshPartidosUI();
+  }
+
   document.addEventListener("DOMContentLoaded", initPartidos);
+  document.addEventListener("mundial:datos-actualizados", refreshPartidosUI);
 })();

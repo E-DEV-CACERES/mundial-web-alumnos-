@@ -290,3 +290,22 @@ function getRivalEnPartido(partido, equipoId) {
   if (partido.visitante.id === equipoId) return partido.local;
   return partido.visitante;
 }
+
+/** Fusiona cambios desde data/partidos-live.json sobre el calendario base */
+function aplicarOverridesPartidos(overrides) {
+  if (!overrides || typeof overrides !== "object") return 0;
+
+  var count = 0;
+  Object.keys(overrides).forEach(function (id) {
+    var partido = CALENDARIO_PARTIDOS_2026[id];
+    var patch = overrides[id];
+    if (!partido || !patch) return;
+
+    if (patch.estado !== undefined) partido.estado = patch.estado;
+    if (patch.golesLocal !== undefined) partido.golesLocal = patch.golesLocal;
+    if (patch.golesVisitante !== undefined) partido.golesVisitante = patch.golesVisitante;
+    count += 1;
+  });
+
+  return count;
+}
